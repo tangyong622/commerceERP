@@ -17,7 +17,7 @@ import javax.sql.DataSource;
 
 
 @Configuration
-@MapperScan(basePackages = "com.zx.system.mapper", sqlSessionTemplateRef = "sqlSessionTemplate")
+@MapperScan(basePackages = "com.commerceerp.system.mapper", sqlSessionTemplateRef = "sqlSessionTemplate")
 public class DataSourceConfig {
 
     @Bean(name = "dataSource")
