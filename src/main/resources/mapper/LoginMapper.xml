@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.commerceerp.system.mapper.LoginMapper">
+
+    <!--查看用户-->
+    <select id="getUser" resultType="com.commerceerp.system.entity.SysUser">
+        SELECT id,username,loginname,remark,logintime FROM sys_user
+        WHERE loginname = #{loginname} AND password = #{password} AND delFlag != '1'
+    </select>
+
+    <!--修改登录时间-->
+    <update id="updateLoginTime">
+        UPDATE sys_user SET login_time = now() WHERE id = #{id}
+    </update>
+
+    <!--修改密码-->
+    <update id="updatePwd">
+        UPDATE sys_user SET
+            password = #{password},
+            updTime = #{updTime},
+            updUserId = #{updUserId}
+        WHERE id = #{id}
+    </update>
+
+</mapper>
