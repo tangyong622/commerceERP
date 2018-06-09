@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>致享-管理系统</title>
+    <link rel="stylesheet" href="/plugins/layui/css/layui.css">
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+<body >
+    <div class="admin-login">
+        <form class="layui-form layui-form-pane" >
+            <div class="layui-form-item">
+                <label class="layui-form-label">用户名</label>
+                <div class="layui-input-block">
+                  <input type="text" lay-verify="required|username" name="username" autocomplete="off" placeholder="请输入用户名" class="layui-input login-input" style="height: 38px;">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">密码</label>
+                <div class="layui-input-block">
+                  <input type="password" lay-verify="required|password" name="password" autocomplete="off" placeholder="请输入密码" class="layui-input" style="height: 38px;">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <button class="layui-btn admin-loginbtn" lay-submit="" lay-filter="login">登录</button>
+            </div>
+          </form>
+            <p style="color: deepskyblue;font-size: 16px;">*为了您有更好的使用体验，建议使用以下浏览器：谷歌、火狐</p>
+    </div>
+</body>
+
+<script src="/plugins/layui/layui.js"></script>
+<script src="/js/modules/login.js"></script>
+</html>

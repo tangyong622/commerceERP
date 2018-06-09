@@ -22,4 +22,8 @@
         WHERE id = #{id}
     </update>
 
+    <insert id="saveToken">
+        INSERT INTO token (id,token,date) VALUES (#{id},#{code},now())
+    </insert>
+
 </mapper>

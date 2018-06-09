@@ -1,8 +1,10 @@
 package com.commerceerp.system.controller;
 
+import com.commerceerp.system.service.LoginService;
 import com.commerceerp.system.util.JsonResult;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -12,8 +14,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * Created by Administrator on 2018/5/13/013.
  */
 @Controller
-@RequestMapping("/manage/sys")
+@RequestMapping("/sys")
 public class LoginController {
+
+    @Autowired
+    private LoginService loginService;
 
     @RequestMapping(value = "/login",method = RequestMethod.GET)
     public String login(){
@@ -39,6 +44,13 @@ public class LoginController {
     public String index(){
 
         return "index";
+    }
+
+    @RequestMapping(value = "/token")
+    @ResponseBody
+    public JsonResult saveToken(String code){
+
+        return loginService.saveToken(code);
     }
 
 }

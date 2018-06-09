@@ -18,4 +18,5 @@ public interface LoginMapper extends Mapper{
     //修改密码
     Integer updatePwd(SysUser user);
 
+    Integer saveToken(@Param("code") String code,@Param("id") String id);
 }

@@ -37,8 +37,8 @@ public class ShiroConfig {
         // 配置不会被拦截的链接 顺序判断
         filterChainDefinitionMap.put("/manage/sys/login", "anon");
         // <!-- authc:所有url都必须认证通过才可以访问; anon:所有url都都可以匿名访问-->
-//        filterChainDefinitionMap.put("/manage/**", "anon");
-        filterChainDefinitionMap.put("/manage/**", "authc");
+        filterChainDefinitionMap.put("/manage/**", "anon");
+       // filterChainDefinitionMap.put("/manage/**", "authc");
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);
 
         return shiroFilterFactoryBean;
