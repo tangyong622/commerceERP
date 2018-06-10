@@ -46,11 +46,4 @@ public class LoginController {
         return "index";
     }
 
-    @RequestMapping(value = "/token")
-    @ResponseBody
-    public JsonResult saveToken(String code){
-
-        return loginService.saveToken(code);
-    }
-
 }
